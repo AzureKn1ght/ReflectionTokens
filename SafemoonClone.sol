@@ -1,21 +1,6 @@
-/**
-  
-   #BEE
-   
-   #LIQ+#RFI+#SHIB+#DOGE = #BEE
-
-   #SAFEMOON features:
-   3% fee auto add to the liquidity pool to locked forever when selling
-   2% fee auto distribute to all holders
-   I created a black hole so #Bee token will deflate itself in supply with every transaction
-   50% Supply is burned at start.
-   
-
- */
-
+// SPDX-License-Identifier: Unlicensed
 pragma solidity ^0.6.12;
 
-// SPDX-License-Identifier: Unlicensed
 interface IERC20 {
     function totalSupply() external view returns (uint256);
 
@@ -925,10 +910,10 @@ contract SafeMoonClone is Context, IERC20, Ownable {
     string private _symbol = "SAFEMOONCLONE";
     uint8 private _decimals = 9;
 
-    uint256 public _taxFee = 5;
+    uint256 public _taxFee = 2;
     uint256 private _previousTaxFee = _taxFee;
 
-    uint256 public _liquidityFee = 5;
+    uint256 public _liquidityFee = 8;
     uint256 private _previousLiquidityFee = _liquidityFee;
 
     IUniswapV2Router02 public immutable uniswapV2Router;
@@ -958,7 +943,7 @@ contract SafeMoonClone is Context, IERC20, Ownable {
         _rOwned[_msgSender()] = _rTotal;
 
         IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(
-            0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F
+            0x769c4342baC4559cd32C9d5B0F9109131C934a0F
         );
         // Create a uniswap pair for this new token
         uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
